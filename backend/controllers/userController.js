@@ -8,7 +8,7 @@ exports.register = async (req, res) => {
 
   try {
     const existingUser = await User.findOne({ username });
-    if (existingUser) return res.status(400).json({ message: 'Username already exists' });
+    if (existingUser) return res.status(409).json({ message: 'Username already exists' });
 
     const newUser = new User({ username, password });
     await newUser.save();
@@ -25,12 +25,12 @@ exports.login = async (req, res) => {
   try {
     const user = await User.findOne({ username });
     if (!user) {
-      return res.status(400).json({ message: 'Invalid username or password' });
+      return res.status(404).json({ message: 'Username not found' });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(400).json({ message: 'Invalid username or password' });
+      return res.status(401).json({ message: 'Invalid password' });
     }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });

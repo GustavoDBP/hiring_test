@@ -1,0 +1,119 @@
+.container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    padding: 20px;
+
+    background-image: url('/images/play.gif');
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gameTitle {
+    font-family: "Orbitron", sans-serif;
+    font-size: 100px;
+    color: #ffcc00;
+    text-shadow:
+        0 0 10px #ffcc00,
+        0 0 20px #ffaa00,
+        0 0 30px rgba(255, 255, 255, 0.6);
+    margin-top: 70px;
+    z-index: 10;
+    animation: pulseTitle 3s infinite;
+}
+
+.statsContainer {
+    background-color: #1e1e2e;
+    border: 2px solid #4a4e69;
+    border-radius: 20px;
+    padding: 20px 40px;
+    max-width: 90%;
+    height: fit-content;
+    width: fit-content;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.statsContainer h2 {
+    font-family: "Orbitron", sans-serif;
+    color: #ffcc00;
+    text-shadow: 0 0 2px #ffcc00, 0 0 20px #ffaa00;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.statsContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.statsContainer table * {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #282a36;
+}
+
+.statsContainer th,
+.statsContainer td {
+    padding: 10px;
+    border: 1px solid #4a4e69;
+    text-align: center;
+}
+
+.statsContainer th {
+    background-color: #4a4e69;
+    color: #fff;
+}
+
+.statsContainer td {
+    background-color: #282a36;
+    color: #fff;
+}
+
+.statsContainer tr:nth-child(even) {
+    background-color: #44475a;
+}
+
+.statsContainer tr:hover {
+    background-color: #6272a4;
+    color: #fff;
+}
+
+.statsContainer .menuButton {
+    width: 250px;
+    padding: 20px 20px;
+    margin: 20px 0;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #4a4e69, #22223b);
+    border: 2px solid #9a8c98;
+    border-radius: 10px;
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 6px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.statsContainer .menuButton:hover {
+    background-color: #ffaa00;
+}
+
+.statsFooter{
+    margin-top: 20px;
+}
